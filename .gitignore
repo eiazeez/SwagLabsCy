@@ -1,0 +1,11 @@
+node_modules/
+cypress/screenshots/
+cypress/results/*
+cypress/reports/*
+cypress/screenshots/*
+cypress/videos/*
+lightHouse.js
+lhreport.html
+cypress/integration/TTest.spec.js
+index.html
+
