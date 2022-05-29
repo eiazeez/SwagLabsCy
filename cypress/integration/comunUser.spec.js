@@ -1,6 +1,7 @@
 import LoginPage from '../support/pages/login'
 import HomePage from '../support/pages/home'
 import CartPage from '../support/pages/cart'
+import CheckoutPage from '../support/pages/checkout'
 
 describe('Fluxo de Compra comum', function () {
 
@@ -19,7 +20,7 @@ describe('Fluxo de Compra comum', function () {
                 HomePage.shouldBeVisible()
         })
 
-        it('deve escolher um dos produtos disponíveis para comprar', function () {
+        it('deve comprar como um user comum', function () {
                 HomePage.selectRandomFilter ()           
                 HomePage.getRandomProduct ()
                 HomePage.goToCart ()
@@ -27,6 +28,20 @@ describe('Fluxo de Compra comum', function () {
                 CartPage.shouldBeVisible ()
                 CartPage.addOneMoreItem ()
                 CartPage.goToCheckout ()
+
+                CheckoutPage.shouldBeVisible ()
+
+             const user = { firstName: 'John', lastName: 'Frusciante', postalCode: '123456789'}   
+
+                CheckoutPage.form (user)
+                CheckoutPage.submit ()
+                CheckoutPage.itensShouldBeVisible ()
+                CheckoutPage.finish ()
+
+             const congratsTxt = "THANK YOU FOR YOUR ORDER"
+                
+                CheckoutPage.congratsShouldHaveTxt (congratsTxt)
+                CheckoutPage.goBackToHome()
         })
 
     })
