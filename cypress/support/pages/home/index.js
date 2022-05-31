@@ -18,7 +18,22 @@ class HomePage {
       return Cypress._.sample(items)
     })
     .click()
-  }    
+  }
+  
+    addAllProducts () {
+      cy.get(el.buyButton).click( { multiple: true } )
+    }
+
+    counterShouldHave () {
+        cy.get(el.cartCounter).invoke('text').then(($value) => {
+        cy.get(el.cartCounter)
+          .should('have.text', $value)
+      })   
+    }
+
+    removeAllProducts () {
+      cy.get(el.buyButton).click( { multiple: true } )
+    }
 
     selectRandomFilter () {
       cy.get(el.filter)

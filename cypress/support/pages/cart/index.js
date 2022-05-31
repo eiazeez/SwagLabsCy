@@ -13,9 +13,15 @@ class CartPage {
           .should('be.visible')
     }
 
+    itensShouldHave (haveLength) {
+        cy.get(el.itens)
+          .should('have.length', haveLength)
+    }
+
     addOneMoreItem () {
         cy.get(el.continueShopping).click()
         HomePage.getRandomProduct ()
+        HomePage.counterShouldHave ()
         HomePage.goToCart ()
         cy.get(el.itens).should('have.length', 2)
     }

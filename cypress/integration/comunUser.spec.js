@@ -1,4 +1,3 @@
-import LoginPage from '../support/pages/login'
 import HomePage from '../support/pages/home'
 import CartPage from '../support/pages/cart'
 import CheckoutPage from '../support/pages/checkout'
@@ -13,16 +12,13 @@ describe('Fluxo de Compra comum', function () {
         }
 
         before('deve logar com um user bom', function () {
-                LoginPage.go()
-                LoginPage.form(user)
-                LoginPage.submit()
-    
-                HomePage.shouldBeVisible()
+                cy.login (user)
         })
 
         it('deve comprar como um user comum', function () {
                 HomePage.selectRandomFilter ()           
                 HomePage.getRandomProduct ()
+                HomePage.counterShouldHave ()
                 HomePage.goToCart ()
 
                 CartPage.shouldBeVisible ()

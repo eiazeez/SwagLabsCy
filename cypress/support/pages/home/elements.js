@@ -5,6 +5,7 @@ exports.el = {
     buyButton: 'button[id^=add-to-cart]',
     filter:'.product_sort_container',
     cart: '.shopping_cart_link',
+    cartCounter: '.shopping_cart_badge',
 }
 
 exports.filters = [
