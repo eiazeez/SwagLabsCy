@@ -1,7 +1,0 @@
-{
-    "baseUrl": "https://www.saucedemo.com/",
-    "viewportWidth": 1440,
-    "viewportHeight": 900,
-    "defaltCommandTimeout": 30000,
-    "chromeWebSecurity": false   
-}
