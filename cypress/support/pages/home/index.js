@@ -24,15 +24,15 @@ class HomePage {
       cy.get(el.buyButton).click( { multiple: true } )
     }
 
+    removeAllProducts () {
+      cy.get(el.removeButton).click( { multiple: true } )
+    }
+
     counterShouldHave () {
         cy.get(el.cartCounter).invoke('text').then(($value) => {
         cy.get(el.cartCounter)
           .should('have.text', $value)
       })   
-    }
-
-    removeAllProducts () {
-      cy.get(el.buyButton).click( { multiple: true } )
     }
 
     selectRandomFilter () {
@@ -42,6 +42,18 @@ class HomePage {
 
     goToCart () {
       cy.get(el.cart).click()
+    }
+
+    openMenu () {
+      cy.get(el.menu).click()
+    }
+
+    closeMenu () {
+      cy.get(el.crossMenu).click()
+    }
+
+    logout () {
+      cy.get(el.logout).click()
     }
 
 }

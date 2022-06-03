@@ -4,7 +4,9 @@ class LoginPage {
 
     go () {
         cy.visit('/')
+    }
 
+    shouldBeVisible () {
         cy.get(el.formField).should('be.visible')
     }
 
