@@ -46,7 +46,9 @@ yarn add cypress --dev
 ```
 npx cypress open
 ```
-![CPT2206080106-621x349](https://user-images.githubusercontent.com/92765887/172529378-ecf15eec-8443-4a7f-8a84-c3db8304196b.gif)
+
+![CPT2206111803-968x545](https://user-images.githubusercontent.com/92765887/173204817-b4bf7af7-e3d7-43ab-be25-ef6dcee200c4.gif)
+
 
 #
 * Após abrir a interface do Cypress, para abrir os casos de testes, selecione a opção E2E Testing 
